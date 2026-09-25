@@ -1,0 +1,87 @@
+/*CREATE DATABASE posta*/
+USE posta;
+/*creacion de tablas*/
+
+CREATE TABLE administrador
+(
+idadmin INT NOT NULL PRIMARY KEY,
+apellido VARCHAR(30),
+nombres VARCHAR(30),
+correo VARCHAR (50),
+clave CHAR(5)
+);
+
+
+CREATE TABLE paciente (
+dni CHAR(8) NOT NULL PRIMARY KEY,
+apellidos VARCHAR(20),
+nombres VARCHAR(20),
+telefono CHAR(10)
+);
+
+CREATE TABLE cita (
+numero INT NOT NULL PRIMARY KEY,
+fecha DATE,
+turno VARCHAR(20),
+hora VARCHAR(20),
+dni CHAR(8),
+idespe CHAR(5)
+);
+
+CREATE TABLE especialidad (
+idespe CHAR(5) NOT NULL PRIMARY KEY,
+nombre_espe VARCHAR(50)
+);
+
+/*establecer las relaciones*/
+
+/*relacion entre cita y paciente*/
+ALTER TABLE cita ADD FOREIGN KEY(dni) REFERENCES paciente(dni);
+
+/*relacion entre cita y especialidad */
+ALTER TABLE cita ADD FOREIGN KEY(idespe) REFERENCES paciente(idespe);
+
+
+
+
+
+
+USE posta; /* activar la base de datos */
+
+/* Relación entre cita y paciente */
+ALTER TABLE cita ADD FOREIGN KEY (dni) REFERENCES paciente(dni);
+
+/* Relación entre cita y especialidad (Corregido: apunta a especialidad) */
+ALTER TABLE cita ADD FOREIGN KEY (idespe) REFERENCES especialidad(idespe);
+
+COMMIT;
+
+
+
+
+USE posta;
+
+INSERT INTO administrador (idadmin, apellido, nombres, correo, clave) VALUES
+(1, 'perez', 'luis', 'luis@senati.pe', '12345');
+
+INSERT INTO especialidad (idespe, nombre_espe) VALUES 
+('E0001', 'ONCOLOGIA');
+
+INSERT INTO paciente (dni, apellidos, nombres, telefono) VALUES
+('12345678', 'RAMOS MENDOZA', 'LUIS', '993455109');
+
+INSERT INTO cita (numero, fecha, turno, hora, dni, idespe) VALUES
+(1, '2026-09-25', 'MAÑANA', '8:00 AM', '12345678', 'E0001');
+
+
+
+
+USE posta;
+
+SELECT * FROM administrador;*
+
+SELECT * FROM paciente,
+
+SELECT * FROM especialidad,
+
+SELECT * FROM cita;

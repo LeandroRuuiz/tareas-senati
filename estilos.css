@@ -1,0 +1,132 @@
+.fondo {
+    background-color: #e9ecef; /* Gris claro del fondo de la imagen */
+    padding: 20px;
+}
+
+.fondo_header {
+    background-color: #002060; /* Azul oscuro del encabezado SENATI */
+}
+
+header {
+    background-color: transparent;
+    padding: 20px;
+}
+
+nav {
+    background-color: #001675;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 10px;
+    flex: 1;
+}
+
+h1 {
+    color: #002060;
+}
+
+h2 {
+    font-family: sans-serif;
+    color: #000000;
+    font-size: large;
+}
+
+table {
+    color: #050303;
+    border: 2px solid #050303;
+    border-radius: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #050303;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Usamos este para la franja azul de "Encontramos 3 carreras" */
+.contenedor {
+    background-color: #0033a0;
+    color: #ffffff;
+    padding: 15px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Usamos este para las cajas blancas de las carreras */
+.contenedor2 {
+    background-color: #ffffff;
+    padding: 15px;
+    gap: 20px;
+    border: 1px solid #cccccc;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Mantenemos tu flexbox para alinear la info dentro de la carrera */
+.contenedor3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer {
+    background-color: #050303;
+    color: chocolate;
+    padding: 10px;
+}
+
+@media (max-width: 700px) {
+    .contenedor {
+        flex-direction: column;
+        margin: 10px;
+    }
+    /* Para que en celular las carreras se vean en columna */
+    .contenedor2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    font-size: medium;
+    background-color: #9c9c9c;
+    margin: 20px auto;
+}
+
+form {
+    width: 50%;
+    background-color: #d3d3d3;
+    padding: 10px;
+    margin-left: 25%;
+}
+
+.titulo {
+    color: #ffffff;
+    background-color: transparent; 
+    padding: 12px 20px;
+    margin: 0;
+    width: 100%;
+}
+
+p {
+    font-size: small;
+    color: #333333;
+    margin: 5px 0;
+}
+
+input {
+    width: 40%;
+    padding: 5%;
+    font-size: small;
+    margin: 5px 0;
+}
